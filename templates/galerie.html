@@ -1,0 +1,244 @@
+{% extends 'template_base.html'%}
+{% load static %}
+
+{% block galerie %}
+{% if user.is_authenticated%}
+<div class="container-fluid galerie">
+<div class="container pt-5">
+<h3 class="text-warning mb-3"> Eglise St Jacques-St Christophe </h3>
+<a class="btn btn-primary mb-5 " href="{% url 'galerie:ajouter-galerie1'%} "><i class="fas fa-plus" ></i> Ajout d'images </a> 
+<div class="container">
+<div class="row g-3">
+{% for image in cathegorie1 %}
+
+ 
+      <div class="col-md-3 col-xl-2 mb-5 col-6">
+        <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+      
+        <a href="{% url 'galerie:delete-galerie1' image.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+      </div>
+ 
+  
+
+{% endfor %}
+</div>
+</div>
+
+   
+   <h3 class="text-warning mb-3"> Accueil </h3>
+   <a class="btn btn-primary mb-5 " href="{% url 'galerie:ajouter-galerie2'%}"><i class="fas fa-plus" ></i> Ajout d'images </a>
+    <div class="container mt-5 ">
+    <div class="row g-3">
+    {% for image in cathegorie2 %}
+    
+     
+       
+          <div class="col-md-3 col-xl-2 mb-5 col-6">
+            <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+          
+            <a href="{% url 'galerie:delete-galerie2' image.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+          </div>
+       
+      
+    
+    {% endfor %}
+    </div>
+    </div>
+    <h3 class="text-warning mb-3"> La Chapelle Sacré Coeur du Bois Gaumont  </h3>
+    <a class="btn btn-primary  " href="{% url 'galerie:ajouter-galerie3'%}"><i class="fas fa-plus" ></i> Ajout d'images </a>
+    <div class="container mt-5 ">
+    <div class="row g-3">
+    {% for image in cathegorie4 %}
+    
+     
+      
+          <div class="col-md-3 col-xl-2 mb-5 col-6">
+            <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+           
+            <a href="{% url 'galerie:delete-galerie3' image.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+          </div>
+      
+      
+    
+    {% endfor %}
+    </div>
+    </div>
+    
+    <h3 class="text-warning mb-3"> Les Jeunes de 18-35 ans   </h3>
+    <a class="btn btn-primary  " href="{% url 'galerie:ajouter-galerie4'%}"><i class="fas fa-plus" ></i> Ajout d'images </a>
+    <div class="container mt-5 ">
+    <div class="row g-3">
+    {% for image in cathegorie3 %}
+    
+     
+      
+          <div class="col-md-3 col-xl-2 mb-5 col-6">
+            <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+          
+            <a href="{% url 'galerie:delete-galerie4' image.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+          </div>
+      
+      
+    
+    {% endfor %}
+    </div>
+    </div>
+
+    <h3 class="text-warning mb-3"> Sainte Anne   </h3>
+    <a class="btn btn-primary mb-5 " href="{% url 'galerie:ajouter-galerie5'%}"><i class="fas fa-plus" ></i> Ajout d'images </a>
+    <div class="container  ">
+    <div class="row g-3">
+    {% for image in cathegorie6 %}
+    
+     
+      
+          <div class="col-md-3 col-xl-2 mb-5 col-6">
+            <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+           
+            <a href="{% url 'galerie:delete-galerie5' image.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+          </div>
+      
+      
+    
+    {% endfor %}
+    </div>
+    </div>
+    <h3 class="text-warning mb-3">  Chez les Soeurs rue du 11 novembre  </h3>
+    <a class="btn btn-primary  " href="{% url 'galerie:ajouter-galerie6'%}"><i class="fas fa-plus" ></i> Ajout d'images </a>
+    <div class="container mt-5 ">
+    <div class="row g-3">
+    {% for image in cathegorie5 %}
+    
+     
+      
+          <div class="col-md-3 col-xl-2 mb-5 col-6">
+            <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+            
+          
+            <a href="{% url 'galerie:delete-galerie6' image.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+          </div>
+      
+      
+    
+    {% endfor %}
+    </div>
+    </div>
+</div>
+</div>
+{% else %}
+<div class="container-fluid galerie">
+  <div class="container pt-5">
+  <h3 class="text-warning mb-3"> Eglise St Jacques-St Christophe </h3>
+  <div class="container">
+  <div class="row g-3">
+  {% for image in cathegorie1 %}
+  
+   
+        <div class="col-md-3 col-xl-2 mb-5 p-1 col-6">
+          <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+        
+        </div>
+   
+  
+  {% endfor %}
+  </div>
+  </div>
+  
+     
+     <h3 class="text-warning mb-3"> Accueil </h3>
+      <div class="container  ">
+      <div class="row g-3">
+      {% for image in cathegorie2 %}
+      
+       
+         
+            <div class="col-md-3 col-xl-2 mb-5 col-6">
+              <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+            
+            </div>
+         
+        
+      
+      {% endfor %}
+      </div>
+      </div>
+      <h3 class="text-warning "> La Chapelle Sacré Coeur du Bois Gaumont  </h3>
+   
+      <div class="container mt-3 ">
+      <div class="row g-3">
+      {% for image in cathegorie4 %}
+      
+       
+        
+            <div class="col-md-3 col-xl-2 mb-5 col-6">
+              <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+      
+            </div>
+        
+        
+      
+      {% endfor %}
+      </div>
+      </div>
+      
+      <h3 class="text-warning "> Les Jeunes de 18-35 ans   </h3>
+     
+      <div class="container mt-3 ">
+      <div class="row g-3">
+      {% for image in cathegorie3 %}
+      
+       
+        
+            <div class="col-md-3 col-xl-2 mb-5 col-6">
+              <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+            
+            </div>
+        
+        
+      
+      {% endfor %}
+      </div>
+      </div>
+  
+      <h3 class="text-warning mb-3"> Sainte Anne   </h3>
+   
+      <div class="container  ">
+      <div class="row g-3">
+      {% for image in cathegorie6 %}
+      
+       
+        
+            <div class="col-md-3 col-xl-2 mb-5 col-6">
+              <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+             
+            </div>
+        
+        
+      
+      {% endfor %}
+      </div>
+      </div>
+      <h3 class="text-warning ">  Chez les Soeurs rue du 11 novembre  </h3>
+
+      <div class="container mt-3 ">
+      <div class="row g-3">
+      {% for image in cathegorie5 %}
+      
+       
+        
+            <div class="col-md-3 col-xl-2 mb-5 col-6">
+              <a href="{{image.image.url}}" data-lightbox="Sitefrance24" data-title="" data-index="0"><img width="150" height="150" src="{{image.image.url}}" alt></a>
+              
+            
+              
+            </div>
+        
+        
+      
+      {% endfor %}
+      </div>
+      </div>
+  </div>
+  </div>
+{% endif %}
+{% endblock %}

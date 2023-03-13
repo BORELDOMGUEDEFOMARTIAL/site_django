@@ -1,0 +1,186 @@
+
+{% extends 'template_base.html'%}
+{% load static %}
+
+{% block actualites %}
+<div class="container text-center mt-5">
+<h1 class="text-warning">Actualités Paroissiales</h1>
+
+<div class="container actualites">
+ 
+    <div class="row pt-5 pb-5 pl-2 Pr-2  mb-4">
+    {% for article in actualites_paroissiale %}
+   <div class="col-sm-4 ">
+    <div class="card mb-4">
+    
+        <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="{{ article.titre}}">
+    
+     
+         <div class="card-body">
+           
+          <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+ 
+         </div>
+           
+    </div>
+   </div>
+    {% endfor %}
+    </div>
+</div>
+<br>
+<h1 class="text-warning">Actualités de l'Eglise</h1>
+{% if user.is_authenticated %}
+<a class="btn btn-primary  mb-3" href="{% url 'carousel:ajouter-article_eglise'%}"><i class="fas fa-plus" ></i> Ajout d'articles </a>
+{% endif %}
+<div class="container actualites">
+ 
+    <div class="row pt-5 pb-5 pl-2 Pr-2  mb-4">
+    {% if user.is_authenticated %}
+    {% for article in actualites_eglise %}
+            {% if article.id == 3 %}
+    <div class="col-sm-4 ">
+        <a href="{% url 'carousel:update-article_eglise' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+        <div class="card mb-4" style="height: 23rem;">
+        
+            <img  width="300px" height="300px" class="card-img-top w-100 "   src="{{ article.image.url}}" alt="{{ article.titre}}">
+          
+         
+             <div class="card-body">
+                
+               <a href="{{article.lien_article}}" target="_blank"> <p class="class-text">{{article.contenu}}</p></a>
+              <br> 
+              
+             
+            
+              <!-- <a href="{% url 'carousel:delete-article_eglise' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+             </div>
+            
+             
+       
+        </div>
+       
+       </div>
+           {% else %}
+           {% if article.id == 7%}
+    <div class="col-sm-4 ">
+        <a href="{% url 'carousel:update-article_eglise' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+        <div class="card mb-4" style="height: 23rem;">
+        
+            <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="{{ article.titre}}">
+          
+         
+             <div class="card-body">
+                
+               <a href="{{article.lien_article}}" target="_blank"> <p class="class-text">{{article.contenu}}</p></a>
+              <br> 
+              
+             
+              
+              <!-- <a href="{% url 'carousel:delete-article_eglise' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+             </div>
+            
+             
+       
+        </div>
+       
+       </div>
+           {% else %}
+           {% if article.id == 8%}
+    <div class="col-sm-4 ">
+        <a href="{% url 'carousel:update-article_eglise' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+        <div class="card mb-4" style="height: 23rem;">
+        
+            <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="{{ article.titre}}">
+          
+         
+             <div class="card-body">
+                
+               <a href="{{article.lien_article}}" target="_blank"> <p class="class-text">{{article.contenu}}</p></a>
+              <br> 
+              
+              
+              <!-- <a href="{% url 'carousel:delete-article_eglise' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+             </div>
+            
+             
+       
+        </div>
+      
+              
+       </div>
+            {%else%}
+    <div class="col-sm-4 ">
+         <a href="{% url 'carousel:update-article_eglise' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+              
+        <a href="{% url 'carousel:delete-article_eglise' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+        <div class="card mb-4" style="height: 23rem;">
+        
+            <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="{{ article.titre}}">
+          
+         
+             <div class="card-body">
+                
+               <a href="{{article.lien_article}}" target="_blank"> <p class="class-text">{{article.contenu}}</p></a>
+              <br> 
+              
+             
+             </div>
+            
+             
+       
+        </div>
+       
+       </div>      
+           {% endif%}
+           {% endif%}
+           {% endif%}
+
+    <!-- <div class="col-sm-4 ">
+     <div class="card mb-4" style="height: 23rem;">
+     
+         <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="{{ article.titre}}">
+       
+      
+          <div class="card-body">
+             
+            <a href="{{article.lien_article}}" target="_blank"> <p class="class-text">{{article.contenu}}</p></a>
+           <br> 
+           
+           <a href="{% url 'carousel:update-article_eglise' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+           <b class="t">d</b>
+           <a href="{% url 'carousel:delete-article_eglise' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+          </div>
+         
+          
+    
+     </div>
+    </div> -->
+ 
+    {% endfor %}
+    {% else %}
+    {% for article in actualites_eglise %}
+   <div class="col-sm-4 ">
+    <div class="card  mb-4 " style="height: 23rem;">
+    
+        <img   class="card-img-top "   src="{{ article.image.url}}" alt="{{ article.titre}}">
+    
+     
+         <div class="card-body">
+            
+           <a href="{{article.lien_article}}" target="_blank"> <p class="class-text">{{article.contenu}}</p></a>
+          <br> 
+          
+      
+         </div>
+        
+         
+   
+    </div>
+   </div>
+
+    {% endfor %}
+    {% endif %}
+    </div>
+</div>
+</div>
+{% endblock %}

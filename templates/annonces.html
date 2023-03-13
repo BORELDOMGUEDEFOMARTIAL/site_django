@@ -1,0 +1,46 @@
+{% extends 'template_base.html'%}
+{% load static %}
+
+{% block annonces %}
+{% if user.is_authenticated%}
+<div class="pt-5 pb-5 annonce">
+<div class="container text-center ">
+<h1 class="text-warning text-center">ANNONCES</h1> 
+<!-- <h4>Annonces 4-5 mars</h4> --> <br>
+<a class="btn btn-primary " href=" {% url 'annonces:ajouter-annonce'%}"><i class="fas fa-plus" ></i> Ajout d'annonces </a> 
+<b>
+<ul class="w-100  liste_annonce">
+    {% for annonce in annonces %}
+    <li >
+        {{annonce.contenu}}
+    
+    </li>
+    <a href="{% url 'annonces:update-annonce' annonce.pk %} " class="btn btn-info  text-left"> <i class="fas fa-edit"></i></a> 
+    <b class="t">d</b>
+    <a  href="{% url 'annonces:delete-annonce' annonce.pk %}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+    {% endfor %}
+    
+</ul>
+</b>
+</div>
+</div>
+{% else %}
+<div class="pt-5 pb-5 annonce">
+    <div class="container text-center ">
+    <h1 class="text-warning text-center">ANNONCES</h1> 
+ 
+    <b>
+    <ul class="w-100  liste_annonce">
+        {% for annonce in annonces %}
+        <li class="mb-3">
+            {{annonce.contenu}}
+       
+        </li>
+        {% endfor %}
+        
+    </ul>
+    </b>
+    </div>
+    </div>
+{% endif %}
+{% endblock %}

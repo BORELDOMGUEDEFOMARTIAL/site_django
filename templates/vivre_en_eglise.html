@@ -1,0 +1,97 @@
+{% extends 'template_base.html'%}
+{% load static %}
+
+{% block vivre_en_eglise %}
+<div class="container">
+<h1 class="text-warning text-center mt-5"> Vivre en Eglise </h1>
+<hr>
+</div>
+<div class="container mB-5 mt-5">
+    <div class="row">
+          <div class="col-sm-3  ">
+            <ol class=" p-0 aller_au_kt">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li width ="">
+       <b>       <a class="text-white" href="{% url 'prier_celebrer'%}">  Pour Prier et célébrer   </a>
+              <ul>
+                  
+              
+                  <li> <a class="text-white" href="{% url 'equipe_animation_liturgique'%}">Equipe d'animation Liturgique</a> </li>
+                  <li> <a class="text-white" href="{% url 'equipe_animation_paroissiale'%}">Equipe d'animation paroissiale</a>  </li>
+                  <li> <a class="text-white" href="{% url 'chorale'%}"> Chorale </a></li>
+              
+              </ul>
+              </li>
+              <li>
+              <a class="text-white" href="{% url 'pour_en_aider'%}"> Pour s'entraider </a>
+              <ul>
+                  
+              
+                  <li> <a class="text-white" href="{% url 'conseil_economique_paroissiale' %}">Conseil Economique paroissial</a> </li>
+                  <li> <a class="text-white" href="{% url 'dernier_de_eglise'%}">Dernier de l'Eglise</a>  </li>
+                  <li> <a class="text-white" href="{% url 'secours_catholique'%}"> Secours Catholique </a></li>
+                  <li> <a class="text-white" href="{% url 'société_saint_vincent_paul'%}"> Société de Saint-Vincent De-Paul </a></li>
+                  <li> <a class="text-white" href="{% url 'CCFD'%}"> CCFD </a></li>
+                  <li> <a class="text-white" href="{% url 'pour_sinformer'%}"> Pour s'informer : la feuille paroissiale </a></li>
+                  <li> <a class="text-white" href="{% url 'chantier_cardinal'%}"> Chantiers du cardinal </a></li>
+              </ul>
+              </li>
+              <li>
+                  <a class="text-white" href="{% url 'communaute_religieuse' %}">  Communautés religieuses </a>
+                
+              </li>
+              <li>
+                  <a class="text-white" href="{% url 'guide_scouts'%}">   Guides et Scouts d'Europe  </a>
+                
+              </li>
+          
+          </b>
+           </ol>
+          </div>
+
+          <div class="col-sm-9   cathechisme">
+
+            <div class="container p-3 text-justify mb-5 cathechisme">
+ 
+
+               <b> -  Scouts et Guides de France :</b> Contacter la paroisse du Plessis <br>
+
+              <b>  -   Secours catholique :</b> André Wolff <br>
+                
+                <b> -   Service évangélique des malades :</b> Daniel Philippe
+                <br>
+              <b>  -  Action catholique des enfants (ACE) :</b> <br>
+                
+                 
+                <br>
+                (N.B. : Cette liste n’est pas exhaustive.) <br>
+                
+                 
+                <br>
+                Vous pouvez aussi proposer vos services et disponibilités à l’accueil de votre paroisse pour :
+                
+                 <br> <br>
+                <b>
+                - la liturgie (chant, lecture, service de l’autel) <br>
+                
+                - le nettoyage et l’embellissement de l’église. <br>
+          
+                 
+                
+                ☼ Si vous avez d’autres suggestions, n’hésitez pas à en parler à un prêtre ou à l’accueil paroissial. Sachez aussi que, dans chaque paroisse, il existe une équipe d’animation (prêtre et laïcs) dont les membres seront à votre écoute. Bien sûr, être disciple du Christ et être serviteur comme lui ne consiste pas à figurer dans un catalogue d’activités : il existe mille et une manières, parfois très discrètes. La vôtre ?
+            </b>
+              </div>
+               
+               
+         
+                </div>
+                
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

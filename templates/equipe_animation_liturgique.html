@@ -1,0 +1,87 @@
+{% extends 'template_base.html'%}
+{% load static %}
+
+{% block equipe_animation_liturgique %}
+
+<div class="container">
+    <h1 class="text-warning text-center mt-5"> Equipe d'animation liturgique
+        Des talents partagés </h1>
+    <hr>
+    </div>
+    <div class="container mB-5 mt-5">
+        <div class="row">
+              <div class="col-sm-3  ">
+                <ol class=" p-0 aller_au_kt">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li width ="">
+             <b>       <a class="text-white" href="{% url 'prier_celebrer'%}">  Pour Prier et célébrer   </a>
+                    <ul>
+                        
+                    
+                        <li> <a class="text-white" href="{% url 'equipe_animation_liturgique'%}">Equipe d'animation Liturgique</a> </li>
+                        <li> <a class="text-white" href="{% url 'equipe_animation_paroissiale'%}">Equipe d'animation paroissiale</a>  </li>
+                        <li> <a class="text-white" href="{% url 'chorale'%}"> Chorale </a></li>
+                    
+                    </ul>
+                    </li>
+                    <li>
+                    <a class="text-white" href="{% url 'pour_en_aider'%}"> Pour s'entraider </a>
+                    <ul>
+                        
+                    
+                        <li> <a class="text-white" href="{% url 'conseil_economique_paroissiale' %}">Conseil Economique paroissial</a> </li>
+                        <li> <a class="text-white" href="{% url 'dernier_de_eglise'%}">Dernier de l'Eglise</a>  </li>
+                        <li> <a class="text-white" href="{% url 'secours_catholique'%}"> Secours Catholique </a></li>
+                        <li> <a class="text-white" href="{% url 'société_saint_vincent_paul'%}"> Société de Saint-Vincent De-Paul </a></li>
+                        <li> <a class="text-white" href="{% url 'CCFD'%}"> CCFD </a></li>
+                        <li> <a class="text-white" href="{% url 'pour_sinformer'%}"> Pour s'informer : la feuille paroissiale </a></li>
+                        <li> <a class="text-white" href="{% url 'chantier_cardinal'%}"> Chantiers du cardinal </a></li>
+                    </ul>
+                    </li>
+                    <li>
+                        <a class="text-white" href="{% url 'communaute_religieuse' %}">  Communautés religieuses </a>
+                      
+                    </li>
+                    <li>
+                        <a class="text-white" href="{% url 'guide_scouts'%}">   Guides et Scouts d'Europe  </a>
+                      
+                    </li>
+                
+                </b>
+                 </ol>
+              </div>
+    
+              <div class="col-sm-9   cathechisme">
+    
+                <div class="container p-3 text-justify text-center mb-3 cathechisme">
+<p> <i>
+    " Les dons de la grâce sont variés, mais c'est toujours le même Esprit. Les fonctions dans l'Église sont variées, mais c'est toujours le même Seigneur. Les activités sont variées, mais c'est toujours le même Dieu qui agit en tous. Chacun reçoit le don de manifester l'Esprit en vue du bien de tous. " (I Cor 12, 4-5)
+</i>
+</p> 
+                    <img src="{% static 'images/main.jpg'%}" alt="">  <br> 
+
+                    <p>
+                        Si cette Parole parle à chacun d’entre nous, elle trouve une résonance toute particulière au cœur de l’équipe liturgique. En effet, semaine après semaine, c’est une petite équipe qui se mobilise pour célébrer le Christ Vivant, en préparant le rassemblement dominical des fidèles, unis dans la même prière.
+
+ 
+
+ 
+<br> <br>
+Il y a tant de façons d’être membre de cette équipe, tant de manières de se mettre au service de Dieu et de ses fidèles, tant de menus détails qui convergent vers un même but : aider à ce que les célébrations soient belles et priantes.
+
+ <br> <br>
+
+Faire partie d'une l’équipe liturgique est un enrichissement personnel à travers une réflexion d’équipe où l’on découvre ensemble la richesse des textes bibliques qui nourrissent notre foi. Il s‘agit ensuite de trouver les moyens de les faire résonner dans notre communauté paroissiale, au cours de notre Eucharistie dominicale, pour raviver la joie de nous savoir aimés de Dieu, sauvés par Jésus-Christ, entraînés par l’Esprit à vivre en chrétiens dans les actes de notre vie quotidienne.
+
+ 
+                    </p>
+                    </div>
+                    
+    </div>
+    
+    </div>
+    
+    </div>
+{% endblock %}

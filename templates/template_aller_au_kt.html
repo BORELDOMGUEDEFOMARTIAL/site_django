@@ -1,0 +1,85 @@
+{% extends 'template_base.html'%}
+{% load static %}
+
+
+{% block template_aller_au_kt.html%}
+<div class="container">
+    <h1 class="text-warning text-center mt-5">
+         {% block titre_aller_kt %}
+
+         {% endblock %} 
+    </h1>
+    <div class="container mt-5">
+        <div class="row">
+              <div class="col-sm-3  ">
+                <b>
+                 <ol class=" p-0 aller_au_kt">
+                    <li >
+                    <a class="text-white" href="{% url 'eveil_a_la_foi'%}">    L'Eveil à la foi</a>
+                    </li>
+                    <li>
+                    <a  class="text-white" href="{% url 'cathéchisme_du_primaire'%}">  Cathéchisme du primaire</a>
+                    </li>
+                    <li>
+                        <a  class="text-white" href="{% url 'cathechisme_6è_5è' %}">    Cathéchisme 6è/5è</a>
+                    </li>
+                    <li>
+                        <a  class="text-white" href="{% url '1ère_communion'%}">     1ère Communion</a>
+                    </li>
+                    <li>
+                        <a  class="text-white" href="{% url 'aumonerie_jeunes'%}">    Aumonierie des jeunes de 4è/3è/Lycéé </a>
+                    </li>
+                    <li>
+                        <a   class="text-white" href="{% url 'parcours_confirmation'%}">    Parcours de confirmation</a>
+                    </li>
+                    <li>
+                        <a  class="text-white" href="{% url 'pour_aller_loin'%}">      Pour aller loin...</a>
+                    </li>
+                 </ol>
+                </b>
+              </div>
+              <div class="col-sm-9  p-3 cathechisme">
+              {% block aller_au_kt %}
+
+              {% endblock %}
+              {% block eveil_a_la_foi %}
+
+              {% endblock %}
+              {% block cathechisme_du_primaire %}
+              {% endblock %}
+
+              {% block cathechisme_6è_5è %}
+              {% endblock %}
+              {% block communion %}
+              {% endblock %}
+              {% block aumonerie_jeunes %}
+              {% endblock %}
+              {% block parcours_confirmation %}
+              {% endblock %}
+
+              {% block pour_aller_loin %}
+              {% endblock %}
+              </div>
+              
+        </div>
+    
+</div>
+    <div class="container text-center mt-5">
+    
+    
+    
+    <h4 class="text-warning mb-4 mt-5">
+    Permanence catéchèse <br>
+    
+    le mercredi de 14h à 16h30 et de 19h à 20h <br>
+    
+    au 9, rue Guillaume Budé
+    
+    excepté pendant les vacances scolaires.
+    </h4>
+     
+    </p>
+    </div>
+  
+</div>
+{% endblock %}

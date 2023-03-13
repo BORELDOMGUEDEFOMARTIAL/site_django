@@ -1,0 +1,367 @@
+
+{% extends 'template_base.html'%}
+{% load static %}
+
+{% block actualites_paroissiale %}
+{% if user.is_authenticated%}
+<div class="container text-center mt-5 mb-5">
+<h1 class="text-warning">Actualités Paroissiales</h1>
+<br>
+<div class="container actualites">
+ <h2 class="pt-3 text-danger">   articles sans documents</h2> <br>
+ <a class="btn btn-primary  mb-3" href="{% url 'carousel:ajouter-article_paroissiale'%}"><i class="fas fa-plus" ></i> Ajout d'articles </a>
+    <div class="row pt-2  pl-2 Pr-2  ">
+     
+    {% for article in actualites_paroissiale %}
+    {% if article.id == 3%}
+    <div class="col-sm-4 ">
+        <a href="{% url 'carousel:update-article_paroissiale' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+                  
+        <!-- <a href="{% url 'carousel:delete-article_paroissiale' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+        <div class="card mb-4">
+        
+            <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="">
+        
+         
+             <div class="card-body">
+               
+              <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+             
+    
+             </div>
+               
+        </div>
+       </div>
+    {% else %}
+    {% if article.id == 5%}
+    <div class="col-sm-4 ">
+        <a href="{% url 'carousel:update-article_paroissiale' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+                  
+        <!-- <a href="{% url 'carousel:delete-article_paroissiale' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+        <div class="card mb-4">
+        
+            <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="">
+        
+         
+             <div class="card-body">
+               
+              <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+             
+    
+             </div>
+               
+        </div>
+       </div>
+    {% else %}
+    {%if article.id == 9 %}
+    <div class="col-sm-4 ">
+        <a href="{% url 'carousel:update-article_paroissiale' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+                  
+        <!-- <a href="{% url 'carousel:delete-article_paroissiale' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+        <div class="card mb-4">
+        
+            <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="">
+        
+         
+             <div class="card-body">
+               
+              <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+             
+    
+             </div>
+               
+        </div>
+       </div>
+    {% else %}
+    <div class="col-sm-4 ">
+        <a href="{% url 'carousel:update-article_paroissiale' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+                  
+        <a href="{% url 'carousel:delete-article_paroissiale' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+        <div class="card mb-4">
+        
+            <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="">
+        
+         
+             <div class="card-body">
+               
+              <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+             
+    
+             </div>
+               
+        </div>
+       </div>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+
+    {% endfor %}
+    
+    </div>
+    <br>
+
+        <h2 class="pt-3 text-danger">   articles avec documents word</h2> <br>
+        <a class="btn btn-primary  mb-3" href="{% url 'carousel:ajouter-article_paroissiale_word'%}"><i class="fas fa-plus" ></i> Ajout d'articles </a>
+           <div class="row pt-2  pl-2 Pr-2  ">
+            
+           {% for article in actualites_paroissiale_word %}
+          <div class="col-sm-4 ">
+            <a href="{% url 'carousel:update-article_paroissiale_word' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+              
+            <a href="{% url 'carousel:delete-article_paroissiale_word' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+           <div class="card mb-4">
+           
+               <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="">
+           
+            
+                <div class="card-body">
+                  
+                 <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+                
+                 <div class="row">
+                  <div class="col-3">
+                  <a href="{{article.document_word.url}}">  <img class="w-100" src="{% static 'images/docs.png'%}" alt=""></a>
+                  </div>
+                  <div class="col-9 pt-3">
+                   <a  href="{{article.document_word.url}}"> Telecharger</a>
+                  </div>
+                 </div>
+                </div>
+                  
+           </div>
+          </div>
+           {% endfor %}
+           
+           </div>
+           <br>
+           <H2 class="text-danger">Articles avec documents pdf </H2> <br>
+           <a class="btn btn-primary  mb-3" href="{% url 'carousel:ajouter-article_paroissiale_pdf'%}"><i class="fas fa-plus" ></i> Ajout d'articles </a>
+          
+               <div class="row pt-2  pl-2 Pr-2  ">
+                
+               {% for article in actualites_paroissiale_pdf %}
+              <div class="col-sm-4 ">
+                <a href="{% url 'carousel:update-article_paroissiale_pdf' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+              
+                <a href="{% url 'carousel:delete-article_paroissiale_pdf' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+               <div class="card mb-4">
+               
+                   <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="">
+               
+                
+                    <div class="card-body">
+                      
+                     <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+                    
+                     <div class="row">
+                        <div class="col-3">
+                        <a href="{{article.document_pdf.url}}">  <img class="w-100" src="{% static 'images/pdfs (ss1).png'%}" alt=""></a>
+                        </div>
+                        <div class="col-9 pt-3">
+                         <a  href="{{article.document_pdf.url}}"> Telecharger</a>
+                        </div>
+                       </div>
+                    </div>
+                      
+               </div>
+              </div>
+               {% endfor %}
+               
+               </div>
+               <br>
+               <h2 class="text-danger">articles avec documents pdf et words</h2> <br>
+               <a class="btn btn-primary  mb-3" href="{% url 'carousel:ajouter-article_paroissiale_pdf_word'%}"><i class="fas fa-plus" ></i> Ajout d'articles </a>
+            
+                   <div class="row pt-2  pl-2 Pr-2  ">
+                    
+                   {% for article in actualites_paroissiale_pdf_word %}
+                  <div class="col-sm-4 ">
+                    <a href="{% url 'carousel:update-article_paroissiale_pdf_word' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+              
+                    <a href="{% url 'carousel:delete-article_paroissiale_pdf_word' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+                   <div class="card mb-4">
+                   
+                       <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="">
+                   
+                    
+                        <div class="card-body">
+                          
+                         <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+                         <div class="row">
+                            <div class="col-3">
+                            <a href="{{article.document_word.url}}">  <img class="w-100" src="{% static 'images/docs.png'%}" alt=""></a>
+                            </div>
+                            <div class="col-9 pt-3">
+                             <a  href="{{article.document_word.url}}"> Telecharger</a>
+                            </div>
+                           </div>
+                           <br>
+                         <div class="row">
+                            <div class="col-3">
+                            <a href="{{article.document_pdf.url}}">  <img class="w-100" src="{% static 'images/pdfs (ss1).png'%}" alt=""></a>
+                            </div>
+                            <div class="col-9 pt-3">
+                             <a  href="{{article.document_pdf.url}}"> Telecharger</a>
+                            </div>
+                           </div>
+                        </div>
+                          
+                   </div>
+                  </div>
+                   {% endfor %}
+                   
+                   </div>
+                   <br>
+</div>
+</div>
+{% else %}
+
+<div class="container text-center mt-5 mb-5">
+    <h1 class="text-warning">Actualités Paroissiales</h1>
+    <br>
+    <div class="container actualites">
+     <!-- <h2 class="pt-3 text-danger">   articles sans documents</h2> <br> -->
+     <!-- <a class="btn btn-primary  mb-3" href="{% url 'carousel:ajouter-article_paroissiale'%}"><i class="fas fa-plus" ></i> Ajout d'articles </a> -->
+        <div class="row pt-2  pl-2 Pr-2  ">
+         
+        {% for article in actualites_paroissiale %}
+        
+       <div class="col-sm-4 ">
+        <!-- <a href="{% url 'carousel:update-article_paroissiale' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+                  
+        <a href="{% url 'carousel:delete-article_paroissiale' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+        <div class="card mb-4">
+        
+            <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="">
+        
+         
+             <div class="card-body">
+               
+              <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+              
+        
+             </div>
+               
+        </div>
+       </div>
+        {% endfor %}
+        
+        <!-- </div>
+        <br>
+    
+            <h2 class="pt-3 text-danger">   articles avec documents word</h2> <br>
+            <a class="btn btn-primary  mb-3" href="{% url 'carousel:ajouter-article_paroissiale_word'%}"><i class="fas fa-plus" ></i> Ajout d'articles </a>
+               <div class="row pt-2  pl-2 Pr-2  "> -->
+                {% for article in actualites_paroissiale_pdf %}
+                <div class="col-sm-4 ">
+                  <!-- <a href="{% url 'carousel:update-article_paroissiale_pdf' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+                
+                  <a href="{% url 'carousel:delete-article_paroissiale_pdf' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+                 <div class="card mb-4">
+                 
+                     <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="">
+                 
+                  
+                      <div class="card-body">
+                        
+                       <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+                      
+                       <div class="row">
+                          <div class="col-3">
+                          <a href="{{article.document_pdf.url}}">  <img class="w-100" src="{% static 'images/pdfs (ss1).png'%}" alt=""></a>
+                          </div>
+                          <div class="col-9 pt-3">
+                           <a  href="{{article.document_pdf.url}}"> Telecharger</a>
+                          </div>
+                         </div>
+                      </div>
+                        
+                 </div>
+                </div>
+                 {% endfor %}  
+               {% for article in actualites_paroissiale_word %}
+              <div class="col-sm-4 ">
+                <!-- <a href="{% url 'carousel:update-article_paroissiale_word' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+                  
+                <a href="{% url 'carousel:delete-article_paroissiale_word' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+               <div class="card mb-4">
+               
+                   <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="">
+               
+                
+                    <div class="card-body">
+                      
+                     <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+                    
+                     <div class="row">
+                      <div class="col-3">
+                      <a href="{{article.document_word.url}}">  <img class="w-100" src="{% static 'images/docs.png'%}" alt=""></a>
+                      </div>
+                      <div class="col-9 pt-3">
+                       <a  href="{{article.document_word.url}}"> Telecharger</a>
+                      </div>
+                     </div>
+                    </div>
+                      
+               </div>
+              </div>
+               {% endfor %}
+               
+               <!-- </div>
+               <br>
+               <H2 class="text-danger">Articles avec documents pdf </H2> <br>
+               <a class="btn btn-primary  mb-3" href="{% url 'carousel:ajouter-article_paroissiale_pdf'%}"><i class="fas fa-plus" ></i> Ajout d'articles </a>
+              
+                   <div class="row pt-2  pl-2 Pr-2  ">
+                     -->
+                  
+                   
+                   <!-- </div>
+                   <br>
+                   <h2 class="text-danger">articles avec documents pdf et words</h2> <br>
+                   <a class="btn btn-primary  mb-3" href="{% url 'carousel:ajouter-article_paroissiale_pdf_word'%}"><i class="fas fa-plus" ></i> Ajout d'articles </a>
+                
+                       <div class="row pt-2  pl-2 Pr-2  "> -->
+                        
+                       {% for article in actualites_paroissiale_pdf_word %}
+                      <div class="col-sm-4 ">
+                        <!-- <a href="{% url 'carousel:update-article_paroissiale_pdf_word' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+                  
+                        <a href="{% url 'carousel:delete-article_paroissiale_pdf_word' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+                       <div class="card mb-4">
+                       
+                           <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="">
+                       
+                        
+                            <div class="card-body">
+                              
+                             <a href="{{article.lien_article}}"> <p class="class-text">{{article.contenu}}</p></a> 
+                             <div class="row">
+                                <div class="col-3">
+                                <a href="{{article.document_word.url}}">  <img class="w-100" src="{% static 'images/docs.png'%}" alt=""></a>
+                                </div>
+                                <div class="col-9 pt-3">
+                                 <a  href="{{article.document_word.url}}"> Telecharger</a>
+                                </div>
+                               </div>
+                               <br>
+                             <div class="row">
+                                <div class="col-3">
+                                <a href="{{article.document_pdf.url}}">  <img class="w-100" src="{% static 'images/pdfs (ss1).png'%}" alt=""></a>
+                                </div>
+                                <div class="col-9 pt-3">
+                                 <a  href="{{article.document_pdf.url}}"> Telecharger</a>
+                                </div>
+                               </div>
+                            </div>
+                              
+                       </div>
+                      </div>
+                       {% endfor %}
+                       
+                       </div>
+                       <br>
+    </div>
+    </div>
+{% endif %}
+{% endblock %}

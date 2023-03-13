@@ -1,0 +1,47 @@
+{% extends 'template_base.html'%}
+{% load static %}
+
+{% block template_vivre_en_eglise %}
+
+
+<div class="container">
+    <h1 class="text-warning text-center mt-5">
+         {% block titre_vivre %}
+
+         {% endblock %}
+    </h1>
+    <hr>
+
+    <div class="container mt-5">
+        <div class="row">
+              <div class="col-sm-3  ">
+                <b>
+                 <ol class=" p-0 aller_au_kt">
+                    <li >
+                    <a class="text-white" href="{% url 'prier_celebrer'%}"> Pour Prier et célébrer </a>
+                    </li>
+                    <li>
+                    <a  class="text-white" href="{% url 'equipe_animation_liturgique'%}">  Pour s'entraider</a>
+                    </li>
+                    <li>
+                        <a  class="text-white" href="{% url 'equipe_animation_paroissiale' %}"> Communautés religieuse</a>
+                    </li>
+                    <li>
+                        <a  class="text-white" href="{% url 'cathechisme_6è_5è' %}"> Guides et Scouts d'Europe</a>
+                    </li>
+                 </ol>
+                </b>
+              </div>
+              <div class="col-sm-9  p-3 cathechisme">
+              {% block prier_celebrer%}
+
+              {% endblock %}
+            
+              </div>
+              
+        </div>
+    
+</div>
+
+</div>
+{% endblock %}

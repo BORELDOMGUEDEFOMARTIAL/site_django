@@ -1,0 +1,19 @@
+{% extends 'template_priere.html'%}
+{% load static %}
+{% block titre_prier %}
+Liturgie et prière
+{% endblock %}
+
+{% block prier %}
+<div class="container text-center">
+<img src="{% static 'images/prier.jpg'%}" alt="">
+</div> <br> 
+<p>
+    "Si vous désirez vraiment suivre le Christ, si vous voulez que votre amour pour lui grandisse et dure, vous devez être assidus dans la prière. C'est la clef de votre vitalité, de votre vie en Christ. Sans elle votre foi et votre amour mourront.
+<br>
+Si vous persévérez dans la prière quotidienne et dans votre participation dominicale à la messe, votre amour pour Jésus ira croissant. Et votre coeur connaîtra le joie et la paix profonde, celles que le monde ne sera jamais en mesure de vous donner."
+</p> <br>
+<div class="text-right">
+  <b> Le Bienheureux Jean-Paul II</b> 
+</div>
+{% endblock %}

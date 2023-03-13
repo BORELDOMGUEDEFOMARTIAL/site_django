@@ -1,0 +1,107 @@
+{% extends 'template_base.html'%}
+{% load static %}
+
+{% block prier_celebrer %}
+
+<div class="container">
+    <h1 class="text-warning text-center mt-5">Pour Prier et Célébrer  </h1>
+    <hr>
+    </div>
+    <div class="container mB-5 mt-5">
+        <div class="row">
+              <div class="col-sm-3  ">
+                <ol class=" p-0 aller_au_kt">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li width ="">
+             <b>       <a class="text-white" href="{% url 'prier_celebrer'%}">  Pour Prier et célébrer   </a>
+                    <ul>
+                        
+                    
+                        <li> <a class="text-white" href="{% url 'equipe_animation_liturgique'%}">Equipe d'animation Liturgique</a> </li>
+                        <li> <a class="text-white" href="{% url 'equipe_animation_paroissiale'%}">Equipe d'animation paroissiale</a>  </li>
+                        <li> <a class="text-white" href="{% url 'chorale'%}"> Chorale </a></li>
+                    
+                    </ul>
+                    </li>
+                    <li>
+                    <a class="text-white" href="{% url 'pour_en_aider'%}"> Pour s'entraider </a>
+                    <ul>
+                        
+                    
+                        <li> <a class="text-white" href="{% url 'conseil_economique_paroissiale' %}">Conseil Economique paroissial</a> </li>
+                        <li> <a class="text-white" href="{% url 'dernier_de_eglise'%}">Dernier de l'Eglise</a>  </li>
+                        <li> <a class="text-white" href="{% url 'secours_catholique'%}"> Secours Catholique </a></li>
+                        <li> <a class="text-white" href="{% url 'société_saint_vincent_paul'%}"> Société de Saint-Vincent De-Paul </a></li>
+                        <li> <a class="text-white" href="{% url 'CCFD'%}"> CCFD </a></li>
+                        <li> <a class="text-white" href="{% url 'pour_sinformer'%}"> Pour s'informer : la feuille paroissiale </a></li>
+                        <li> <a class="text-white" href="{% url 'chantier_cardinal'%}"> Chantiers du cardinal </a></li>
+                    </ul>
+                    </li>
+                    <li>
+                        <a class="text-white" href="{% url 'communaute_religieuse' %}">  Communautés religieuses </a>
+                      
+                    </li>
+                    <li>
+                        <a class="text-white" href="{% url 'guide_scouts'%}">   Guides et Scouts d'Europe  </a>
+                      
+                    </li>
+                
+                </b>
+                 </ol>
+              </div>
+    
+              <div class="col-sm-9   cathechisme">
+    
+                <div class="container p-3 text-justify mb-3 cathechisme">
+        
+           <h4 class="text-warning">Soeurs de Marie-Joseph et de la Miséricorde
+        </h4>
+         
+        
+            Adresse <br>
+
+31, av, du 11 Novembre 1918 <br>
+
+94350 Villiers-sur-Marne <br>
+
+Tel : 09 50 73 40 18 <br>
+        
+        <a href="https://soeursmariejosephetmisericorde.org/"> www.soeursmariejosephetmisericorde.org</a>
+                  </div>
+                   
+                   <h4 class="text-warning pl-3">Filles de Jésus de Kermaria</h4>
+             <p class="pl-3">
+                Adresse <br>
+
+16, rue Théophile Gautier <br>
+
+94350 Villiers-sur-Marne <br>
+
+Tel : 01 49 30 40 68 <br>
+
+<a href="http://www.fillesdejesus.catholique.fr/">http://www.fillesdejesus.catholique.fr/</a>
+             </p>
+              
+             <h4 class="text-warning pl-3"> Sœurs des Missions Etrangères</h4>
+             <p class="pl-3">
+                Adresse <br>
+
+                17, rue des Fossés
+<br>
+                94350 Villiers-sur-Marne
+    <br>            
+                Tél: 09.73.68.00.81
+<br>
+<a href="https://toulouse.catholique.fr/Soeurs-des-Missions-Etrangeres">Sœurs des Missions Etrangères de Toulouse</a>
+             </p>
+              
+                    </div>
+                    
+    </div>
+    
+    </div>
+    
+    </div>
+{% endblock %}

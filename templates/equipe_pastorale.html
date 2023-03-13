@@ -1,0 +1,83 @@
+{% extends 'template_base.html'%}
+{% load static %}
+
+{% block equipe_pastorale %}
+<h1 class=" text-center mt-5 mb-3 text-warning"> Notre paroisse</h1>  <br>
+<div class="container mb-4">
+   <div class="row">
+       <div class="text-center col-sm-6">
+           <div>
+            <img height="172" width="120" src="{% static 'images/cure2.png'%}" alt="">
+           </div>
+           <div>
+            <b> Curé de la paroisse : </b> Père Paul NGUYEN
+           </div>
+       </div>
+       <br>
+       <div class="text-center col-sm-6">
+         <div>
+            <img height="172" width="120" src="{% static 'images/vicaire.jpg'%}" alt="">
+           </div>
+           <div>
+            <b>Prêtre coopérateur : </b>Père Claudemar PEREIRA DA SILVA
+           </div>
+       </div>
+   </div>
+<br> <br> <br>
+   <div class="row">
+      <div class="text-center col-sm-7">
+         <div>
+            <b> EAP 2021</b> 
+           </div>
+          <div>
+           <img  src="{% static 'images/equipe.png'%}" alt="">
+          </div>
+         
+      </div> 
+      <div class="text-center col-sm-5">
+       <div class="row p-4">
+             <div class="col-3">
+                <img src="{% static 'images/secretaire.jpg'%}" alt="">
+             </div>
+             <div class="col-9"> <br> <br>  
+             <B> Secrétaire :</B>  Mme Isabelle de MESLON
+            </div>
+       </div>
+       <div class="text-left p-4"  >
+         <a href="{% url 'equipe_animation_paroissiale'%}">Equipe d'animation paroissiale</a> <br> 
+         <a href="{% url 'conseil_economique_paroissiale' %}">Conseil économique paroissial</a>
+       </div>
+      </div>
+      <br> 
+      
+  </div>
+   <br> <br>
+
+   <iframe class="w-100 mb-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d780.9127037075643!2d2.5434481243286933!3d48.826419116977576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e60dd8d3bddfd3%3A0x869d0d118d5dea8d!2sEglise%20Catholique%20-%20Villiers-Sur-Marne!5e0!3m2!1sfr!2sfr!4v1677972577574!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <b> Eglise :</b> 5, rue Guillaume-Budé <br>
+
+ 
+
+  <b> Presbytère :</b> 7, rue Guillaume-Budé <br>
+   
+    
+   
+   <b> Secrétariat : </b>9, rue Guillaume-Budé <br>
+   
+    
+   
+   <b> Tél :</b> 01 49 30 20 70  <br>
+   
+          <p class="Pl-4"> 09 63 20 71 18</p> 
+   
+    
+   
+ <b>  e-mail : <a href=""> paroisse.villiers94@wanadoo.fr</a>
+   
+    <br>
+</div>
+{% endblock %}
+
+<br> <b class="text-center">EAP 2021</b>
+<br> 
+<img src="{% static 'images/equipep.png'%}" alt="">
