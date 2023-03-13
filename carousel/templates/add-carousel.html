@@ -1,0 +1,18 @@
+{% extends 'template_base.html'%}
+
+{% block add_carousel %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-warning">Ajout d'annonces</h2>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form}}
+                <button class="btn btn-primary mt-3"> Enregistrer</button>
+            </form>
+           
+        </div>
+    </div>
+</div>
+
+{%endblock%}
