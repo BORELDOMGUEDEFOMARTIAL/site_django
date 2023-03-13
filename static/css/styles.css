@@ -1,0 +1,458 @@
+/* .container{
+    border: 1px solid black;
+}
+.container-fluid{
+    border: 1px solid red;
+ 
+}
+.col-lg-8, .col-lg-4{
+    border: 2px dashed green;
+} */
+span{
+   
+    height: 20px;
+    text-align: left;
+    color: red;
+}
+
+
+.logo{
+    /* width: 60px;
+    height: 60px;
+    background-color: #fff;
+ 
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  
+    padding: 0% ;
+    width: 250px;
+    height: 120px; */
+}
+.logo .nombre{
+    font-size: 22px;
+  
+
+}
+
+
+.nav .nav-item a{
+    color: white;
+    
+    
+}
+
+.naviguation{
+    background-color:#009ED7;
+}
+.nav-highlight{
+    background-color: #009ED7;
+    padding: 0px 6px;
+    margin: 0.5rem 0.5rem;
+    border-radius: 5px;
+   
+}
+.Notification {
+    background-color: rgb(236, 138, 1);
+    /* border: 1px solid red; */
+    color: white;
+    padding: 5px 0px;
+    text-align: right;
+}
+.text-center{
+    margin: 0px auto;
+   
+}
+.col-sm-6{
+    /* border: 1px solid red; */
+   padding: 0px 0px;
+
+}
+.infos{
+background-color: rgb(236, 138, 1);
+text-align: center;
+color: white;
+
+padding: 5px 15px;
+font-size: 15px;
+}
+/* .anonce{
+border: 2px dashed green;
+} */
+/* .col-12, .col-9, .col-3{
+    border: 2px dashed green;
+    } */
+    
+    .info-continu{
+        background-color: #EEEEEE;
+    }
+
+.logo img{
+    width: 90px;
+    height: 90px;
+    
+   border-radius:  50%;
+}
+.carousel-item .logo img{ 
+    border-radius:  50%;
+    width: 100px;
+    height: 120px;
+    
+   border-radius:  0%;
+ }
+/* .col-4{
+    width: 10px;
+    height: 140px;
+      
+   border-radius:  50%;
+} */
+/* .container-fluid{
+    background-color: blue;
+} */
+h2{
+ color: red;
+ text-align: center;
+}
+ .actualité{
+    width: 222.67px;
+    height: 167.1px;
+}
+.footere{
+    background: gray;
+}
+span li{
+    color: #0b44f0;
+}
+ul{
+    list-style: none;
+}
+.deroulant{
+    display: block;
+  margin: top 10px ;
+}
+.option{
+    position: relative;
+    left: -19px;
+    float: left;
+}
+.listonglet {
+    display: flex;
+    justify-content: center;
+
+}
+.onglet{
+    font-weight: 600;
+}
+/* .dropdown-menu{
+    background:black;
+} */
+footer{
+    background-color: rgb(236, 130, 8);
+}
+.Notification .container{
+    animation: Scroll 15s linear infinite;
+}
+
+@keyframes Scroll {
+    0%{
+        transform: translate(0%);
+    }
+
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
+.titre {
+    font-size: 35;
+}
+/* h6{
+    font-size: 50;
+} */
+ h5{
+    font-size: 1px;
+}
+.col-md-3:hover{
+    transform: scale(1.3);
+    transition-duration: 2s;
+}
+header{
+    background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover;
+}
+.barre_nav{
+    background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover;
+}
+body{
+    background-color:  #F0F2F5;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+.horaire{
+background-color: #EEFEFA;
+border-radius: 20%;
+font-family: Georgia, serif;
+}
+.en_tete{
+    background-color: #EEFEFA;
+}
+.actualites{
+    background-color: #F0F2F5;
+}
+.mot_cure{
+    
+    border-radius: 20%;
+    font-family: cursive;
+}
+.bas_page{
+    font-size: 15px;
+}
+label{
+    display: block;
+}
+input, textarea{
+    display: block;
+    width: 70%;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border-color: #FFC107;
+}
+
+.annonce{
+     
+    margin: 0;
+    padding: 0;
+}
+.galerie{
+    background-color:aqua ;
+}
+.liste_annonce{
+    position: relative;
+    width: 450px;
+    margin: 50px auto 0;
+    padding: 5px;
+    box-sizing: border-box;
+    
+}
+.liste_annonce li{
+    display: flex;
+    background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover;
+    padding: 10px;
+    color: white;
+    font-size: 17px;
+    margin: 5px 0 ;
+    transition: .5s;
+    border-radius: 10px;
+    font-family: Georgia, serif;
+}
+.infos_pratique{
+    background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    font-size: 20px;
+}
+.clocher{
+    background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover;
+    padding: 10;
+    color: white;
+    font-size: 18px;
+}
+.grande_nerf{
+    background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 18px;
+}
+.liens_utils{
+   
+    box-sizing: border-box;
+    background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover;
+    color: white;
+    /* display: flex;
+   
+    align-items: center;
+    height: 100vh; */
+    justify-content: center;
+}
+.aller_au_kt{
+    width: 250px;
+}
+
+ol{
+    list-style: none;
+    width: 600px;
+    text-align: center;
+    margin: 2rem auto;
+}
+.cathechisme{
+    background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 18px;
+}
+.mot_pere{
+    background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 18px;
+    
+}
+ol li {
+    font-size: 1.2rem;
+    background:#a2a4a6;
+    opacity: 4s; 
+    margin: 2px 0;
+    /* text-align: center; */
+    padding: 3px 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all .5s;
+    z-index: 5;
+
+}
+
+ol li::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background: orange;
+    transition: all .5s;
+    z-index: -1;
+}
+
+ol li:hover::before{
+    width: 100%;
+}
+
+ol li:nth-child(1)::before{
+    background:rgb(13,110,253);
+   
+}
+ol li:nth-child(2)::before{
+    background: #198754;
+}
+ol li:nth-child(3)::before{
+    background:  #DC3545;
+   
+}
+ol li:nth-child(4)::before{
+    background: #FFC928;
+}
+ol li:nth-child(5)::before{
+    background: #31D2F2;
+}
+ol li:nth-child(6)::before{
+    background: rgb(13,110,253);
+}
+ol li:nth-child(7)::before{
+    background:#6C757D;
+  
+}
+ol li:nth-child(8)::before{
+    background: #0f9d58;
+}
+ol li:nth-child(9)::before{
+    background: #DC3545;
+}
+ol li:nth-child(10)::before{
+    background:   #DC3545;
+}
+ol li:nth-child(11)::before{
+    background:    hsl(336, 85%, 45%);
+}
+ol li:nth-child(12)::before{
+    background: #31D2F2;
+}
+ol li:nth-child(13)::before{
+    background: #0f9d58;
+}
+ol li:nth-child(14)::before{
+    background: #efb71c;
+}
+ol li:nth-child(15)::before{
+    background: #9d980f;
+}
+ol li:nth-child(16)::before{
+    background: #0f9d58;
+}
+ol li:nth-child(17)::before{
+    background: #B5D8A6;
+}
+
+ol li:hover {
+    transform: translateX(20px);
+}
+ul li:hover{
+    /* background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover; */
+    background-color: #1f74d4;;
+}
+.drop li a{
+    /* height: 25px; */
+    width: 300px;
+}
+.drop li a:hover{
+    background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover;
+}
+nav ul li div ul li {
+    display: block;
+}
+ol li a {
+    display: block;
+}
+
+ol li ul li {
+    display: none;
+}
+ol li:hover ul li{
+    display: block;
+}
+.drop{
+    display:block;
+    position: absolute;
+    top: 40px;
+    z-index: -1;
+    visibility: hidden;
+    margin-left:0 ;
+    margin-top: 1.5rem;
+    padding-left: 0.5rem;
+    padding-top: 0rem;
+    transition: all 0.6s ease;
+}
+
+.drop li{
+    
+    background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover;
+    /* visibility: visible; */
+  
+    
+}
+.notre_paroisse:hover .drop{
+    display: block;
+    visibility: visible;
+}
+
+.t{
+    color: transparent;
+}
+.iconn{
+    /* background-image:url("https://image.jimcdn.com/app/cms/image/transf/none/path/s464c1f0bafa8546b/backgroundarea/i42d79a209efb5a29/version/1668797242/image.jpg");
+    background-size: cover; */
+    background-color: #174F8D;
+
+}
+.iconns{
+    background-color: #4276AE;
+}
+.carte{
+    width: 300px;
+    height: 350px;
+}
