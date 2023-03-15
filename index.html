@@ -1,0 +1,317 @@
+{% extends 'template_base.html'%}
+{% load static %}
+
+{% block content %}
+
+<nav class=" navbar navbar-expand-lg en_tete">
+    <div class="collapse navbar-collapse" >
+      {% if user.is_authenticated%}
+          <DIV class="container ">
+            
+              <div class="row ">
+
+                {% for image in images_en_tete %}
+                     {% if image.id == 3 %}
+                <div class="  mr-1 ">
+                     <img width="250" height="150" src="{{image.image.url}}" alt="" >
+                     <a href="{% url 'images_en_tete:update-article' image.pk %}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i></a>
+                </div>
+
+                     {% else %}
+                <div class="  mr-1 ">
+                     <img width="208.75" height="150" src="{{image.image.url}}" alt="" >
+                     <a href="{% url 'images_en_tete:update-article' image.pk %}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+                </div>
+                     {% endif %}
+   
+                {% endfor %}
+            
+          
+              </div>
+               
+          
+            </DIV>
+      {% else %} 
+      <DIV class="container ">
+            
+        <div class="row ">
+
+          {% for image in images_en_tete %}
+               {% if image.id == 3 %}
+          <div class="  mr-1 ">
+               <img width="250" height="150" src="{{image.image.url}}" alt="" >
+               <!-- <a href="{% url 'images_en_tete:update-article' image.pk %}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i></a> -->
+          </div>
+
+               {% else %}
+          <div class="  mr-1 ">
+               <img width="208.75" height="150" src="{{image.image.url}}" alt="" >
+               <!-- <a href="{% url 'images_en_tete:update-article' image.pk %}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a>  -->
+          </div>
+               {% endif %}
+
+          {% endfor %}
+      
+    
+        </div>
+         
+    
+      </DIV>
+      {% endif %}
+        
+     
+        
+       
+    </div>
+
+    
+    </div>
+  </nav>
+
+{% endblock %}
+
+{% block home %}
+<div class=" Notification" >
+    <div class="container">
+    <b> C'est vrai!!.</b>Christ est vraiment réssuscité!(Lc 24,34). 
+   </div>
+</div>
+<div class="container mt-3">
+<div class="row">
+  <div class="col-lg-9">
+      <DIv class="text-warning">
+      <h1>  A LA UNE </h1> 
+      </DIv>
+      {% if user.is_authenticated %}
+      <a class="btn btn-primary  mb-3" href="{% url 'carousel:ajouter-carousel'%}"><i class="fas fa-plus" ></i> Ajout d'articles principales </a>
+         <div class="row">
+          {% for carousel in carousels %} 
+          {% if carousel.id == 7 %}
+          <div class="col-sm-6">
+             <img  src="{{carousel.image.url}}" class="d-block w-100" alt="...">
+             <a href="{% url 'carousel:update-carousel' carousel.pk %}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+          </div>
+          {% else %}
+         <div class=" col-sm-6">
+          <img  src="{{carousel.image.url}}" class="d-block w-100" alt="...">
+          <a href="{% url 'carousel:update-carousel' carousel.pk %}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a> 
+          <B class="t">d</B>
+          <a href="{% url 'carousel:delete-carousel' carousel.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+          </div>
+           {% endif %}
+           {% endfor %}
+          </div>
+         </div> 
+      {% else %}
+    <div id="mon-carousel" class="carousel slide" data-bs-ride="carousel">
+     
+      <div class="carousel-inner">
+        {% for carousel in carousels %}
+            {% if carousel.id == 7 %}
+                   <div class="carousel-item active">
+                      <img width="500" height="600" src="{{carousel.image.url}}" class="d-block w-100" alt="...">
+                   </div>
+            {% else %}
+                  <div class="carousel-item ">
+                    <img width="500" height="600" src="{{carousel.image.url}}" class="d-block w-100" alt="...">
+                  </div>
+            {% endif %}
+            
+           
+        {% endfor %}
+       
+      </div>
+     
+    </div>
+    {% endif %}
+  </div>
+  <div class="col-lg-3 horaire mt-3">
+    <br>
+  <h3 class=" text-primary text-center ">  Horaires Des Messes</h3>
+  <hr>
+  <h4 class="text-danger text-center"> MESSES DOMINICALES </h4>
+  <hr>
+  <ul class="P-0">
+    <li>
+     <h5> Samedi <span class="text-primary"> 18h30 </span> </h5>
+    </li>
+    <li>
+    <h5>  Dimanche <span class="text-primary"> 9h</span> en Portugais </h5>
+   
+    </li>
+    <li>
+      <h5>  Dimanche <span class="text-primary"> 11h</span> en francais </h5>
+    </li>
+  </ul>
+  <hr>
+  <h3 class="text-danger text-center">Le Saint du jour </h3>
+  <hr>
+  <a href="https://eglise.catholique.fr/rss/saint-du-jour/"> aa</a>
+  <h5>S. Grégoire de Narek, abbé et docteur de l’Église
+    Mémoire facultative</h5>
+  <hr>
+  <h3 class="text-center text-danger">  Lectures du Jour  </h3>
+  
+  <hr>
+  <div class="text-center">
+  <a class="text-center" href="https://www.aelf.org/" target="_blank">
+    <img src="{% static 'images/logo_lecture.PNG.'%}" alt="">
+  </a>
+</div>
+
+  <!-- <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+    <atom:link rel="self" type="application/rss+xml" href="https://rss.aelf.org/evangile"/>
+    <title>Évangile</title>
+    <description>
+    <![CDATA[ (c) Association Épiscopale Liturgique pour les pays francophones - 2023 ]]>
+    </description>
+    <link>https://www.aelf.org/</link>
+    <pubDate>Wed, 01 Mar 2023 11:12:41 +0100</pubDate>
+    <lastBuildDate>Wed, 01 Mar 2023 11:12:41 +0100</lastBuildDate>
+    <image>
+    <title>AELF</title>
+    <url>https://rss.aelf.org/images/logo-big.png</url>
+    <link>https://www.aelf.org/</link>
+    </image>
+    <language>fr</language>
+    <copyright>Copyright AELF - Tout droits réservés</copyright>
+    <item>
+    <title>Évangile : « À cette génération il ne sera donné que le signe de Jonas le prophète » (Lc 11, 29-32)</title>
+    <description>
+    <![CDATA[ <p>Acclamation : (cf. Jl 2, 12b.13c)</p> <p><br /><strong>Gloire à toi, Seigneur,<br /> honneur, puissance et majesté ! </strong><br /> Maintenant, dit le Seigneur,<br /> revenez à moi de tout votre cœur,<br /> car je suis tendre et miséricordieux.<br /><strong>Gloire à toi, Seigneur,<br /> honneur, puissance et majesté !</strong></p> <p>Évangile de Jésus Christ selon saint Luc</p> <p>En ce temps-là,<br /> comme les foules s’amassaient,<br /> Jésus se mit à dire :<br /> « Cette génération est une génération mauvaise :<br /> elle cherche un signe,<br /> mais en fait de signe<br /> il ne lui sera donné que le signe de Jonas.<br /> Car Jonas a été un signe pour les habitants de Ninive ;<br /> il en sera de même avec le Fils de l’homme<br /> pour cette génération.<br /> Lors du Jugement, la reine de Saba se dressera<br /> en même temps que les hommes de cette génération,<br /> et elle les condamnera.<br /> En effet, elle est venue des extrémités de la terre<br /> pour écouter la sagesse de Salomon,<br /> et il y a ici bien plus que Salomon.<br /> Lors du Jugement, les habitants de Ninive se lèveront<br /> en même temps que cette génération,<br /> et ils la condamneront ;<br /> en effet, ils se sont convertis<br /> en réponse à la proclamation faite par Jonas,<br /> et il y a ici bien plus que Jonas. »</p> <p>– Acclamons la Parole de Dieu.</p> ]]>
+    </description>
+    </item>
+    </channel>
+    </rss> -->
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="container  mb-3  mt-3 ">
+<div class="row barre_nav">
+<div class="col-sm-2  pb-0">
+<H5 class="text-warning">Mot du Père Paul NGUYEN</H5> <br>
+<img src="{% static 'images/cure.png'%}" class="w-100" alt=""> <br>
+<B class="mot_cure">   Père Paul NGUYEN, Curé de la Paroisse Saint Jacques et Saint Christophe  </B>
+</div>
+<div class="col-sm-5 p-0 ml-0">
+<br>
+<br>
+<h5 class="mt-1 mr-2 ml-3 pr-0 text-white mot_cure"><b> chacun à sa place; une place pour chacun pour que l'Evangile soit annoncée <br>
+Nous sommes heureux de vous accueillir sur ce site, soyez les bienvens! <br>
+Cette Eglise est aussi la votre, elle est la pour vous, pour vous accueillir et vous accompagner dans votre demarche. <br>
+Vous vous posez certaines questions? Répondre à vos différentes intérrogations est notre principale préoccupation à travers le site de notre secteur, qui souhaite également vous informer sur la vie de nos paroisses, de nos mouvements et services, de nos associations... <br>
+N'hésitez pas à nous contacter: les pretres, diacres et laics au services de notre secteur pastorale sont disponibles pour vous accueillir et vous acccompagner. <br>
+Que Dieu vous bénisse!</b> <br> <br>
+
+</h5>
+</div>
+<div class="col-sm-5  text-center">
+<H1 class="text-center text-warning pl-7">    AGENDA </H1>
+<iframe class="w-100" src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=UTC&src=bWFydGlhbGRvbWd1ZUBnbWFpbC5jb20&color=%23039BE5" style="border:solid 1px #FFF" width="410" height="400" frameborder="0" scrolling="no"></iframe>
+</div>
+</div>
+
+
+</div>
+<div class="container-fluid actualites">
+<div class="container mb-0 ">
+<h4 class="text-center text-warning p-3"> Actualités Paroissiales</h4>
+<a href="{% url 'actualites_paroissiale'%}">    <h4 class="text-right text-danger">voir plus...</h4> </a>
+<div class="row">
+  {% for article in actualites_paroissiale %}
+  <div class="col-sm-6 col-md-4 mb-3 ">
+      <img    width="300px"
+      height="300px" src="{{article.image.url}}" class="w-100" alt="">
+      <p class="h6 mt-3">
+         <a href="{{article.lien_article}}"> {{article.contenu}} </a>
+      </p>
+  </div>
+ {% endfor %}
+
+  </div>
+
+  <h4 class="text-center text-warning"> Actualités De L'Eglise </h4>
+  <a href="{% url 'actualites_eglise'%}">    <h4 class="text-right text-danger">voir plus...</h4> </a>
+  <div class="row">
+    {% for article in actualites_eglise %}
+    {% if article.id == 3 %}
+    <div class="col-sm-4 ">
+    <div class="card mb-4" style="height: 23rem;">
+
+    <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="{{ article.titre}}">
+  
+ 
+     <div class="card-body">
+        
+       <a href="{{article.lien_article}}" target="_blank"> <p class="class-text">{{article.contenu}}</p></a>
+      <br> 
+      
+      <!-- <a href="{% url 'carousel:update-article_eglise' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a>  -->
+      <b class="t">d</b>
+      <!-- <a href="{% url 'carousel:delete-article_eglise' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+     </div>
+    </div>
+    </div>
+    {% endif %}
+    {% if article.id == 7 %}
+    <div class="col-sm-4 ">
+    <div class="card mb-4" style="height: 23rem;">
+
+    <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="{{ article.titre}}">
+  
+ 
+     <div class="card-body">
+        
+       <a href="{{article.lien_article}}" target="_blank"> <p class="class-text">{{article.contenu}}</p></a>
+      <br> 
+      
+      <!-- <a href="{% url 'carousel:update-article_eglise' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a>  -->
+      <b class="t">d</b>
+      <!-- <a href="{% url 'carousel:delete-article_eglise' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+     </div>
+    </div>
+    </div>
+    {% endif %}
+    {% if article.id == 8 %}
+    <div class="col-sm-4 ">
+    <div class="card mb-4" style="height: 23rem;">
+
+    <img  width="300px" height="300px" class="card-img-top "   src="{{ article.image.url}}" alt="{{ article.titre}}">
+  
+ 
+     <div class="card-body">
+        
+       <a href="{{article.lien_article}}" target="_blank"> <p class="class-text">{{article.contenu}}</p></a>
+      <br> 
+      
+      <!-- <a href="{% url 'carousel:update-article_eglise' article.pk%}" class="btn btn-info  text-left"> <i class="fas fa-edit"></i> </a>  -->
+      <b class="t">d</b>
+      <!-- <a href="{% url 'carousel:delete-article_eglise' article.pk%}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a> -->
+     </div>
+    </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+{% endblock %}
